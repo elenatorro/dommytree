@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Dommy Tree</title>
+	<link rel="stylesheet" href="treestyle.css">
+	<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+	
+</head>
+<body>
+	<section id="dommy-app">
+		<header id="header">
+			<hgroup>
+				<h1>Dommy Tree</h1>
+				<h2>See the beautiful DOM tree of your website<h2>
+			</hgroup>
+				<textarea id="html-sheet" name="html-sheet">Paste your HTML code here</textarea></br>
+				<button class="button" onclick="domtext()">Submit</button>
+		</header>
+		<div id="dommy-tree">
+			<hgroup>
+				<h2>My dommy tree!<h2>
+			</hgroup>
+			<div id="visualization"></div>
+		</div>
+		<iframe id="iframe"></iframe>
+		<footer id="footer">
+			<button id="save-it" class="button">Save it as pdf</button>
+		</footer>
+	</section>
+	<footer id="info">
+			<p>Created by <a href="http://twitter.com/Elenarcolepsia" alt="twitter">Elena Torr&oacute;</a></p>
+	</footer>
+	<script type="text/javascript" src='load.js'></script>
+	<script type="text/javascript" src="domtree.js"></script>
+</body>
+</html>
