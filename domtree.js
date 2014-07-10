@@ -1,5 +1,5 @@
 var array = new Array();
-var main_data = new Array('Name','Manager','Tootlip');
+var main_data = new Array('Name','Manager','Tooltip');
 var object;
 var mystring = "";
 var myid = "";
