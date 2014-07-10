@@ -1,5 +1,5 @@
 var array = new Array();
-var main_data = new Array('Name','Manager','Tootlip');
+var main_data = new Array('Name','Manager','Tooltip');
 var object;
 var mystring = "";
 var myid = "";
@@ -8,26 +8,32 @@ var text = document.getElementById("html-sheet");
 var doc = iframe.contentWindow.document;
 var div = document.getElementById('dommy-tree');
 array.push(main_data);
+i = 0;
 
+function addID() {
+  i++;
+  return "-aux="+i;
+}
 
 function printNode(node) {
-  if (node.tagName) mystring=node.tagName;
-  else if (node.nodeType == 3) mystring="Text";
-  object = new Array(mystring,node.parentNode.tagName,null);
-  array.push(object);
+    if (!node.hasAttribute("id")) node.setAttribute('id',addID());
+    mystring=node.tagName+"-id-"+node.id;
+    object = new Array(mystring,node.parentNode.tagName+"-id-"+node.parentNode.id,null);
+    array.push(object);
 }
 
 function preorder(node) {
   if (node == null) return;
   printNode(node);
-  preorder(node.firstChild);
-  preorder(node.nextSibling);
+  preorder(node.firstElementChild);
+  preorder(node.nextElementSibling);
 }
 
 function domtext() {
   doc.documentElement.innerHTML = text.value;
-  preorder(doc.documentElement);
+  preorder(doc.documentElement.firstElementChild);
   drawVisualization();
+  cleanTree();
 }
 
 function drawVisualization() {
@@ -36,3 +42,10 @@ function drawVisualization() {
         new google.visualization.OrgChart(document.getElementById('visualization')).
             draw(data, options);
  }
+
+function cleanTree() {
+var mynodes = document.getElementsByClassName('nodeclass');
+for (var i = 0; i < mynodes.length; i++) {
+    mynodes[i].innerHTML = mynodes[i].innerHTML.split('-')[0];
+  }
+}
