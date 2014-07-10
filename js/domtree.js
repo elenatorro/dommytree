@@ -30,6 +30,9 @@ function preorder(node) {
 }
 
 function domtext() {
+  document.getElementById('visualization').innerHTML = '';
+  array = [];
+  array.push(main_data);
   doc.documentElement.innerHTML = text.value;
   preorder(doc.documentElement.firstElementChild);
   drawVisualization();
