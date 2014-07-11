@@ -55,7 +55,12 @@ textarea {
 	padding: 20px;
 	text-align: center;
 	width: 100%;
+	background: white none repeat scroll 0 0;
+	position: relative;
+	overflow: auto;
 }
+
+
 
 .nodeclass {
 	-moz-border-radius-bottomleft:20px;
