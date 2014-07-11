@@ -3,9 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Dommy Tree</title>
-	<link rel="stylesheet" href="css/treestyle.css">
+	<title>Dommy Tree</title>	
 	<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" href="css/treestyle.css">
 	
 </head>
 <body>
@@ -21,10 +22,10 @@
 				<textarea id="html-sheet" name="html-sheet">Paste your HTML code here</textarea></br>
 				<button class="button" onclick="domtext()">Submit</button>
 		</header>
-		<div id="dommy-tree">
-			<hgroup>
+		<hgroup>
 				<h2>My dommy tree!<h2>
 			</hgroup>
+		<div id="dommy-tree">
 			<div id="visualization"></div>
 		</div>
 		<iframe id="iframe"></iframe>
