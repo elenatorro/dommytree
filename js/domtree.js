@@ -52,3 +52,5 @@ for (var i = 0; i < mynodes.length; i++) {
     mynodes[i].innerHTML = mynodes[i].innerHTML.split('-')[0];
   }
 }
+
+$('#dommy-tree').scrollLeft(300);
